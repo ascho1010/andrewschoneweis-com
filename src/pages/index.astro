@@ -3,6 +3,26 @@ import '../styles/global.css';
 
 const name = "Andrew Schoneweis";
 const email = "schoneweis@gmail.com";
+const siteUrl = "https://andrewschoneweis.com";
+const description = "Andrew Schoneweis — UX Designer at YouTube, designing Search and AI experiences for the TV.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": name,
+  "url": siteUrl,
+  "jobTitle": "UX Designer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://google.com"
+  },
+  "description": "UX Designer at Google's YouTube Living Room team, designing Search and AI experiences for TV and home devices.",
+  "email": email,
+  "sameAs": [
+    "https://www.linkedin.com/in/schoneweis"
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -10,8 +30,26 @@ const email = "schoneweis@gmail.com";
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Andrew Schoneweis — UX Designer at YouTube, designing experiences for TV." />
   <title>Andrew Schoneweis</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={siteUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={siteUrl} />
+  <meta property="og:title" content="Andrew Schoneweis" />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}/andrew.jpg`} />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Andrew Schoneweis" />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${siteUrl}/andrew.jpg`} />
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
