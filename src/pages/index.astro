@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+
+const name = "Andrew Schoneweis";
+const email = "schoneweis@gmail.com";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Andrew Schoneweis — UX Designer at YouTube, designing experiences for TV." />
+  <title>Andrew Schoneweis</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <main>
+
+    <section class="hero">
+      <h1>Hi, I'm Andrew.</h1>
+      <p class="tagline">UX Designer on the YouTube Living Room team, designing Search and AI experiences for the TV.</p>
+      <img src="/andrew.jpg" alt="Andrew Schoneweis" class="headshot" />
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      <p>
+        I'm a designer based in Mountain View, California. I've spent the past nine years as a 
+        UX designer at Google, creating multi-modal, AI-driven experiences for TVs and home devices.
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>Say hello</h2>
+      <p>
+        Feel free to connect and reach out! → <a href={`mailto:${email}`}>{email}</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Andrew Schoneweis &mdash; {new Date().getFullYear()}</p>
+  </footer>
+</body>
+</html>

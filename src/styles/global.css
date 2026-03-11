@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #FAF8F4;
+  --text: #1A1A1A;
+  --muted: #767676;
+  --accent: #B85C38;
+  --max-width: 640px;
+  --padding: 2rem;
+}
+
+html {
+  font-size: 18px;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem var(--padding) 4rem;
+}
+
+/* Typography */
+
+h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3A3A3A;
+  max-width: 52ch;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+/* Sections */
+
+.hero {
+  margin-bottom: 4.5rem;
+}
+
+.hero .tagline {
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.headshot {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 2rem;
+}
+
+.about {
+  margin-bottom: 4.5rem;
+}
+
+.contact {
+  margin-bottom: 2rem;
+}
+
+/* Links */
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Footer */
+
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--padding);
+  border-top: 1px solid #E8E4DC;
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 3.5rem;
+  }
+}
