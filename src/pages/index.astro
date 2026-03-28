@@ -3,8 +3,9 @@ import '../styles/global.css';
 
 const name = "Andrew Schoneweis";
 const email = "schoneweis@gmail.com";
-const siteUrl = "https://andrewschoneweis.com";
-const description = "Andrew Schoneweis — UX Designer at YouTube, designing Search and AI experiences for the TV.";
+const siteUrl = "https://www.andrewschoneweis.com";
+const title = "Andrew Schoneweis — UX Designer at YouTube | Google";
+const description = "Andrew Schoneweis — UX Designer at Google's YouTube team. Nine years designing Search and AI experiences for TVs and home devices. Based in Mountain View, CA.";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -30,20 +31,28 @@ const jsonLd = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andrew Schoneweis</title>
+  <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={siteUrl} />
+
+  <!-- Google Fonts (preconnect to avoid render-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" />
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image" href="/andrew.jpg" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={siteUrl} />
-  <meta property="og:title" content="Andrew Schoneweis" />
+  <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`${siteUrl}/andrew.jpg`} />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Andrew Schoneweis" />
+  <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`${siteUrl}/andrew.jpg`} />
 
@@ -58,7 +67,7 @@ const jsonLd = {
     <section class="hero">
       <h1>Hi, I'm Andrew.</h1>
       <p class="tagline">UX Designer on the YouTube Living Room team, designing Search and AI experiences for the TV.</p>
-      <img src="/andrew.jpg" alt="Andrew Schoneweis" class="headshot" />
+      <img src="/andrew.jpg" alt="Andrew Schoneweis" class="headshot" width="120" height="120" />
     </section>
 
     <section class="about">
